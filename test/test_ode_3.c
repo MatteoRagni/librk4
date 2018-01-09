@@ -41,7 +41,7 @@
 /**
  * @brief ODE declaration.
  */
-void ode(double *xdot, double t, const double *x, const double *u, const double **p, void *) {
+void ode(double *xdot, double t, const double *x, const double *u, const double **p, void *q) {
   for (size_t i = 0; i < 3; i++)
     xdot[i] = (1 - 2 * t) * (x[i] * x[i]);
 }

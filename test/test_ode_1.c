@@ -40,7 +40,7 @@
 /**
  * @brief ODE declaration.
  */
-void ode(double *xdot, double t, const double *x, const double *u, const double **p, void *) {
+void ode(double *xdot, double t, const double *x, const double *u, const double **p, void *q) {
   xdot[0] = -p[0][0] * x[0] + p[1][0] * u[0];
 }
 
