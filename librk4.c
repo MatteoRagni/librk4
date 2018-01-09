@@ -32,18 +32,17 @@ rk4_errno rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
   const rk4_float rk4_b[] = {1.0 / 6.0, 1.0 / 3.0, 1.0 / 3.0, 1.0 / 6.0};
   const rk4_float rk4_c[] = {0, 0.5, 0.5, 1};
 
-  // Preparing the k matrix TODO: Static allocation of K
-  rk4_float **k;
-  k = (rk4_float **)malloc(RK4_ORDER * sizeof(rk4_float *));
-  if (!k)
-    return RK4_EMALLOC;
+  // Preparing the k matrix
+  rk4_float *k[RK4_ORDER];
   for (size_t l = 0; l < RK4_ORDER; l++) {
     k[l] = (rk4_float *)calloc(o->f_size, sizeof(rk4_float));
     if (!(k[l])) {
-      free(k);
+      for (size_t r = 0; r < l; r++)
+        free(k[r]);
       return RK4_EMALLOC;
     }
   }
+
   // Preparing support z vector
   rk4_float *z;
   z = (rk4_float *)calloc(o->f_size, sizeof(rk4_float));
@@ -51,7 +50,6 @@ rk4_errno rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
     // Cleaning up if allocation fails
     for (size_t l = 0; l < RK4_ORDER; l++)
       free(k[l]);
-    free(k);
     return RK4_EMALLOC;
   }
 
@@ -76,7 +74,6 @@ rk4_errno rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
   // Clearing up k matrix
   for (size_t l = 0; l < RK4_ORDER; l++)
     free(k[l]);
-  free(k);
   free(z);
   return RK4_SUCCESS;
 }
