@@ -96,7 +96,7 @@ typedef RK4_FLOAT_TYPE rk4_float; /**< Precision type declaration */
  * @param x state for the ODE evaluation
  * @param u external input for the ODE evaluation
  * @param p pointer to arrays of parameters
- * @param data pointer to void for user data
+ * @param auxiliary data pointer to void for user data
  * @returns nothing
  * @warning The callback may produce a buffer overflow error if tries to
  *          write more than x_size elements in xdot.
