@@ -41,7 +41,7 @@
 /**
  * @brief ODE declaration.
  */
-void ode(double *xdot, double t, const double *x, const double *u, const double **p) {
+void ode(double *xdot, double t, const double *x, const double *u, const double **p, void *) {
   xdot[0] = x[1];
   xdot[1] = -p[0][0] * x[0] - p[0][1] * x[1] + p[1][0] * u[0];
 }
@@ -83,7 +83,7 @@ int main() {
 
     t += options.h;
     u[0] = step(t, 1.0);
-    rk4(&options, xp, t, x, u, (const double **)p);
+    rk4(&options, xp, t, x, u, (const double **)p, NULL);
     x[0] = xp[0];
     x[1] = xp[1];
   }

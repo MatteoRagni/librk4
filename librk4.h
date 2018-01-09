@@ -96,12 +96,13 @@ typedef RK4_FLOAT_TYPE rk4_float; /**< Precision type declaration */
  * @param x state for the ODE evaluation
  * @param u external input for the ODE evaluation
  * @param p pointer to arrays of parameters
+ * @param data pointer to void for user data
  * @returns nothing
  * @warning The callback may produce a buffer overflow error if tries to
  *          write more than x_size elements in xdot.
  */
 typedef void (*rk4_ode)(rk4_float *xdot, rk4_float t, const rk4_float *x,
-                        const rk4_float *u, const rk4_float **p);
+                        const rk4_float *u, const rk4_float **p, void *data);
 
 /**
  * @brief Return values for the integration step
@@ -122,7 +123,7 @@ typedef enum rk4_errno {
  * after debugging phase, removing some if in the code.
  * @warning control (u) and parameter (p) pointer are not checked! This
  *          allows to pass NULL vector if the integrator step does not
- *          depend upon those two.
+ *          depend upon those two. Also user data is not checked.
  */
 #define RK4_CHECK_NULL_PTRS
 #ifdef RK4_CHECK_NULL_PTRS
@@ -161,9 +162,10 @@ typedef struct rk4_opts {
  * @param x state for the ODE evaluation
  * @param u external input for the ODE evaluation
  * @param p pointer to arrays of parameters
+ * @param data space for user data, passed to ode callback
  * @return an exit error number
  */
 rk4_errno rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
-              const rk4_float *x, const rk4_float *u, const rk4_float **p);
+              const rk4_float *x, const rk4_float *u, const rk4_float **p, void* data);
 
 #endif /* LIBRK4_H_ */

@@ -46,8 +46,9 @@ it is necessary to define the following vector field:
 void ode(double *xdot,     /**< Output of the vector field */
          double t,         /**< Current time */
          const double *x,  /**< Current state vector */
-         const double *u,  /**< Input vecotr
-         const double **p) /**< Vector of vectors of parameters */
+         const double *u,  /**< Input vecotr */
+         const double **p, /**< Vector of vectors of parameters */
+         void *data)       /**< Space for user data */
 {
   xdot[0] = -p[0][0] * x[0] + p[1][0] * u[0];
 }
@@ -62,8 +63,9 @@ rk4_opts options = {
 ```
 a single integration step can be performed as follows:
 ``` c
-rk4(&options, xp, t, x, u, p);
+rk4(&options, xp, t, x, u, p, NULL);
 ```
+The last `NULL` is userdata placeholder (the callback does not use it).
 The complete code is in [`test_ode_1`](test/test_ode_1.c). The result of the integration:
 
 ![Ode 1](.images/ode1.png?raw=true)
@@ -80,8 +82,9 @@ it is necessary to define the following vector field:
 void ode(double *xdot,     /**< Output of the vector field */
          double t,         /**< Current time */
          const double *x,  /**< Current state vector */
-         const double *u,  /**< Input vecotr
-         const double **p) /**< Vector of vectors of parameters */
+         const double *u,  /**< Input vecotr */
+         const double **p, /**< Vector of vectors of parameters */
+         void *data)       /**< Space for user data */
 {
   xdot[0] = x[1];
   xdot[1] = -p[0][0] * x[0] - p[0][1] * x[1] + p[1][0] * u[0];
@@ -97,7 +100,7 @@ rk4_opts options = {
 ```
 a single integration step can be performed as follows:
 ``` c
-rk4(&options, xp, t, x, u, p);
+rk4(&options, xp, t, x, u, p, NULL);
 ```
 The complete code is in [`test_ode_2`](test/test_ode_2.c). The result of the integration:
 
@@ -115,8 +118,9 @@ it is necessary to define the following vector field (in this case we are evalua
 void ode(double *xdot,     /**< Output of the vector field */
          double t,         /**< Current time */
          const double *x,  /**< Current state vector */
-         const double *u,  /**< Input vecotr
-         const double **p) /**< Vector of vectors of parameters */
+         const double *u,  /**< Input vecotr */
+         const double **p, /**< Vector of vectors of parameters */
+         void *data)       /**< Space for user data */
 {
   for (size_t i = 0; i < 3; i++)
     xdot[i] = (1 - 2 * t) * x[i] * x[i];
@@ -132,7 +136,7 @@ rk4_opts options = {
 ```
 a single integration step can be performed as follows (there is no input and no parameter):
 ``` c
-rk4(&options, xp, t, x, NULL, NULL);
+rk4(&options, xp, t, x, NULL, NULL, NULL);
 ```
 The complete code is in [`test_ode_3`](test/test_ode_3.c). The result of the integration:
 

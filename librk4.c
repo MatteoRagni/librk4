@@ -22,7 +22,7 @@
 #include "librk4.h"
 
 rk4_errno rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
-              const rk4_float *x, const rk4_float *u, const rk4_float **p) {
+              const rk4_float *x, const rk4_float *u, const rk4_float **p, void *data) {
 
   ASSERT_PTR_NOT_NULL(o);
   ASSERT_PTR_NOT_NULL(xp);
@@ -56,13 +56,13 @@ rk4_errno rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
   }
 
   // Evaluating k[0]
-  o->f(k[0], t, x, u, p);
+  o->f(k[0], t, x, u, p, data);
   // Evaluating other k[i]
   for (size_t l = 1; l < RK4_ORDER; l++) {
     for (size_t i = 0; i < o->f_size; i++)
       z[i] = x[i] + (o->h) * rk4_a[l - 1] * k[l - 1][i];
     for (size_t i = 0; i < o->f_size; i++) {
-      o->f(k[l], t + rk4_c[l] * (o->h), z, u, p);
+      o->f(k[l], t + rk4_c[l] * (o->h), z, u, p, data);
     }
   }
   // Evaluating output

@@ -41,7 +41,7 @@
 /**
  * @brief ODE declaration.
  */
-void ode(double *xdot, double t, const double *x, const double *u, const double **p) {
+void ode(double *xdot, double t, const double *x, const double *u, const double **p, void *) {
   for (size_t i = 0; i < 3; i++)
     xdot[i] = (1 - 2 * t) * (x[i] * x[i]);
 }
@@ -72,7 +72,7 @@ int main() {
     fprintf(fp, "% 1.5f,% 3.5f,% 3.5f, % 3.5f\n", t, x[0], x[1], x[2]);
 
     t += options.h;
-    rk4(&options, xp, t, x, NULL, NULL);
+    rk4(&options, xp, t, x, NULL, NULL, NULL);
     x[0] = xp[0];
     x[1] = xp[1];
     x[2] = xp[2];
