@@ -89,28 +89,28 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a9c0455cfb146d70c7ebfcab40cc69475"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="librk4_8h.html#a9c0455cfb146d70c7ebfcab40cc69475">rk4_ode</a>) (<a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> *xdot, <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> t, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> *x, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> *u, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> **p, void *data)</td></tr>
 <tr class="memdesc:a9c0455cfb146d70c7ebfcab40cc69475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ode callback function: implements \( f(t, x, u, p) \).  <a href="#a9c0455cfb146d70c7ebfcab40cc69475">More...</a><br /></td></tr>
 <tr class="separator:a9c0455cfb146d70c7ebfcab40cc69475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04142329635864d21350574416e85500"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3">rk4_errno</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="librk4_8h.html#a04142329635864d21350574416e85500">rk4_errno</a></td></tr>
-<tr class="memdesc:a04142329635864d21350574416e85500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return values for the integration step.  <a href="#a04142329635864d21350574416e85500">More...</a><br /></td></tr>
-<tr class="separator:a04142329635864d21350574416e85500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55de869da7bc6b31f385198a12357cd8"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018">rk4_errorcode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="librk4_8h.html#a55de869da7bc6b31f385198a12357cd8">rk4_errorcode</a></td></tr>
+<tr class="memdesc:a55de869da7bc6b31f385198a12357cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return values for the integration step.  <a href="#a55de869da7bc6b31f385198a12357cd8">More...</a><br /></td></tr>
+<tr class="separator:a55de869da7bc6b31f385198a12357cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37444a3fa0fa1d8f6af7d7af8db324d5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="librk4_8h.html#structrk4__opts">rk4_opts</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="librk4_8h.html#a37444a3fa0fa1d8f6af7d7af8db324d5">rk4_opts</a></td></tr>
 <tr class="memdesc:a37444a3fa0fa1d8f6af7d7af8db324d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integrator options.  <a href="#a37444a3fa0fa1d8f6af7d7af8db324d5">More...</a><br /></td></tr>
 <tr class="separator:a37444a3fa0fa1d8f6af7d7af8db324d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a433ea079ce0fc9e2e079bba9134462a3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3">rk4_errno</a> { <a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3ac6645edd42e6ea3385e84249332a8d92">RK4_SUCCESS</a> = 0, 
-<a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3afc1b5664e1ff11f3093feb3088b3dd3a">RK4_EMALLOC</a>, 
-<a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3aae5c0fefb6c41d0b884d417aacf15e64">RK4_NULLPTR</a>, 
-<a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3a3a0520da9f29ab60eab08834a6d739d5">RK4_GENERIC</a>
- }<tr class="memdesc:a433ea079ce0fc9e2e079bba9134462a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return values for the integration step.  <a href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3">More...</a><br /></td></tr>
+<tr class="memitem:aa942cfac0406f70693a30ff423366018"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018">rk4_errorcode</a> { <a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018ac6645edd42e6ea3385e84249332a8d92">RK4_SUCCESS</a> = 0, 
+<a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018afc1b5664e1ff11f3093feb3088b3dd3a">RK4_EMALLOC</a>, 
+<a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018aae5c0fefb6c41d0b884d417aacf15e64">RK4_NULLPTR</a>, 
+<a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018a3a0520da9f29ab60eab08834a6d739d5">RK4_GENERIC</a>
+ }<tr class="memdesc:aa942cfac0406f70693a30ff423366018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return values for the integration step.  <a href="librk4_8h.html#aa942cfac0406f70693a30ff423366018">More...</a><br /></td></tr>
 </td></tr>
-<tr class="separator:a433ea079ce0fc9e2e079bba9134462a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aa942cfac0406f70693a30ff423366018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4c01be77731d3cbfbf3665cb43289e8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3">rk4_errno</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="librk4_8h.html#a4c01be77731d3cbfbf3665cb43289e8b">rk4</a> (const <a class="el" href="librk4_8h.html#structrk4__opts">rk4_opts</a> *o, <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> *xp, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> t, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> *x, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> *u, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> **p, void *data)</td></tr>
-<tr class="memdesc:a4c01be77731d3cbfbf3665cb43289e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an RK4 step.  <a href="#a4c01be77731d3cbfbf3665cb43289e8b">More...</a><br /></td></tr>
-<tr class="separator:a4c01be77731d3cbfbf3665cb43289e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a57d5de561be372c40c69d84efe5c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018">rk4_errorcode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="librk4_8h.html#ad6a57d5de561be372c40c69d84efe5c7">rk4</a> (const <a class="el" href="librk4_8h.html#structrk4__opts">rk4_opts</a> *o, <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> *xp, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> t, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> *x, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> *u, const <a class="el" href="librk4_8h.html#a65733e85754f70bd9664fe455e22372b">rk4_float</a> **p, void *data)</td></tr>
+<tr class="memdesc:ad6a57d5de561be372c40c69d84efe5c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs an RK4 step.  <a href="#ad6a57d5de561be372c40c69d84efe5c7">More...</a><br /></td></tr>
+<tr class="separator:ad6a57d5de561be372c40c69d84efe5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structrk4__opts" id="structrk4__opts"></a>
@@ -165,7 +165,7 @@ h</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (!(ptrs))                                                        \</div><div class="line">    return <a class="code" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3aae5c0fefb6c41d0b884d417aacf15e64">RK4_NULLPTR</a>;</div><div class="ttc" id="librk4_8h_html_a433ea079ce0fc9e2e079bba9134462a3aae5c0fefb6c41d0b884d417aacf15e64"><div class="ttname"><a href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3aae5c0fefb6c41d0b884d417aacf15e64">RK4_NULLPTR</a></div><div class="ttdef"><b>Definition:</b> librk4.h:114</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (!(ptrs))                                                        \</div><div class="line">    return <a class="code" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018aae5c0fefb6c41d0b884d417aacf15e64">RK4_NULLPTR</a>;</div><div class="ttc" id="librk4_8h_html_aa942cfac0406f70693a30ff423366018aae5c0fefb6c41d0b884d417aacf15e64"><div class="ttname"><a href="librk4_8h.html#aa942cfac0406f70693a30ff423366018aae5c0fefb6c41d0b884d417aacf15e64">RK4_NULLPTR</a></div><div class="ttdef"><b>Definition:</b> librk4.h:114</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -211,12 +211,12 @@ h</td>
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a class="anchor" id="a04142329635864d21350574416e85500"></a>
+<a class="anchor" id="a55de869da7bc6b31f385198a12357cd8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef enum <a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3">rk4_errno</a>  <a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3">rk4_errno</a></td>
+          <td class="memname">typedef enum <a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018">rk4_errorcode</a>  <a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018">rk4_errorcode</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -281,28 +281,28 @@ h</td>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="a433ea079ce0fc9e2e079bba9134462a3"></a>
+<a class="anchor" id="aa942cfac0406f70693a30ff423366018"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3">rk4_errno</a></td>
+          <td class="memname">enum <a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018">rk4_errorcode</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Return values for the integration step. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a433ea079ce0fc9e2e079bba9134462a3ac6645edd42e6ea3385e84249332a8d92"></a>RK4_SUCCESS&#160;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aa942cfac0406f70693a30ff423366018ac6645edd42e6ea3385e84249332a8d92"></a>RK4_SUCCESS&#160;</td><td class="fielddoc">
 <p>Step seems good! </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a433ea079ce0fc9e2e079bba9134462a3afc1b5664e1ff11f3093feb3088b3dd3a"></a>RK4_EMALLOC&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aa942cfac0406f70693a30ff423366018afc1b5664e1ff11f3093feb3088b3dd3a"></a>RK4_EMALLOC&#160;</td><td class="fielddoc">
 <p>During the step there was an allocation error </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a433ea079ce0fc9e2e079bba9134462a3aae5c0fefb6c41d0b884d417aacf15e64"></a>RK4_NULLPTR&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aa942cfac0406f70693a30ff423366018aae5c0fefb6c41d0b884d417aacf15e64"></a>RK4_NULLPTR&#160;</td><td class="fielddoc">
 <p>Reveived a null pointer </p>
 </td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a433ea079ce0fc9e2e079bba9134462a3a3a0520da9f29ab60eab08834a6d739d5"></a>RK4_GENERIC&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><a class="anchor" id="aa942cfac0406f70693a30ff423366018a3a0520da9f29ab60eab08834a6d739d5"></a>RK4_GENERIC&#160;</td><td class="fielddoc">
 <p>Unknown error generated </p>
 </td></tr>
 </table>
@@ -310,12 +310,12 @@ h</td>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a4c01be77731d3cbfbf3665cb43289e8b"></a>
+<a class="anchor" id="ad6a57d5de561be372c40c69d84efe5c7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="librk4_8h.html#a433ea079ce0fc9e2e079bba9134462a3">rk4_errno</a> rk4 </td>
+          <td class="memname"><a class="el" href="librk4_8h.html#aa942cfac0406f70693a30ff423366018">rk4_errorcode</a> rk4 </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="librk4_8h.html#structrk4__opts">rk4_opts</a> *&#160;</td>
           <td class="paramname"><em>o</em>, </td>

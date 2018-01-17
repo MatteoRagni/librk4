@@ -21,7 +21,7 @@
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 #include "librk4.h"
 
-rk4_errno rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
+rk4_errorcode rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
               const rk4_float *x, const rk4_float *u, const rk4_float **p, void *data) {
 
   ASSERT_PTR_NOT_NULL(o);

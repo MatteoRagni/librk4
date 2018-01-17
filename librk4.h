@@ -107,12 +107,12 @@ typedef void (*rk4_ode)(rk4_float *xdot, rk4_float t, const rk4_float *x,
 /**
  * @brief Return values for the integration step
  */
-typedef enum rk4_errno {
+typedef enum rk4_errorcode {
   RK4_SUCCESS = 0, /**< Step seems good! */
   RK4_EMALLOC,     /**< During the step there was an allocation error */
   RK4_NULLPTR,     /**< Reveived a null pointer */
   RK4_GENERIC      /**< Unknown error generated */
-} rk4_errno;
+} rk4_errorcode;
 
 /**
  * @brief Assertion for pointer check. Can be disabled
@@ -165,7 +165,7 @@ typedef struct rk4_opts {
  * @param data space for user data, passed to ode callback
  * @return an exit error number
  */
-rk4_errno rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
+rk4_errorcode rk4(const rk4_opts *o, rk4_float *xp, const rk4_float t,
               const rk4_float *x, const rk4_float *u, const rk4_float **p, void* data);
 
 #endif /* LIBRK4_H_ */
